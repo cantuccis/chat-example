@@ -4,6 +4,10 @@ namespace BusinessLogic
 {
     public class User
     {
+        public static readonly int MinimumUsernameLength = 5;
+        public static readonly int MaximumUsernameLength = 27;
+        public static readonly int MinimumPasswordLength = 8;
+
         private string username;
         private string password;
         private DateTime creationDate;
@@ -27,29 +31,13 @@ namespace BusinessLogic
                 if (value == null)
                     throw new DomainException("Username is required");
 
-                if (value.Length < 5)
-                    throw new DomainException("Username is too short (minimum length allowed is 5)");
+                if (value.Length < MinimumUsernameLength)
+                    throw new DomainException($"Username is too short (minimum length allowed is {MinimumUsernameLength})");
 
-                if (value.Length > 27)
-                    throw new DomainException("Username is too long (maximum length allowed is 27)");
+                if (value.Length > MaximumUsernameLength)
+                    throw new DomainException($"Username is too long (maximum length allowed is {MaximumUsernameLength})");
 
                 this.username = value;
-            }
-        }
-
-        // Mantenemos la password privada para que no pueda ser modificada por otros objetos.
-        private string Password
-        {
-            get => password; 
-            set
-            {
-                if (value == null)
-                    throw new DomainException("Password is required");
-
-                if (value.Length < 8)
-                    throw new DomainException("Password is too short (minimum length allowed is 8)");
-
-                password = value;
             }
         }
 
@@ -57,5 +45,23 @@ namespace BusinessLogic
         public DateTime CreationDate { get => creationDate; set => creationDate = value; }
 
         public bool CheckPassword(string password) => this.Password == password;
+
+
+        // Mantenemos la password privada para que no pueda ser modificada por otros objetos.
+        private string Password
+        {
+            get => password;
+            set
+            {
+                if (value == null)
+                    throw new DomainException("Password is required");
+
+                if (value.Length < MinimumPasswordLength)
+                    throw new DomainException($"Password is too short (minimum length allowed is {MinimumPasswordLength})");
+
+                password = value;
+            }
+        }
+
     }
 }
