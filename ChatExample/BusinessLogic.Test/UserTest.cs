@@ -129,7 +129,7 @@ namespace BusinessLogic.Test
             }
             catch (DomainException ex)
             {
-                Assert.AreEqual(ex.Message, "Username is too short (minumum length allowed is 5)");
+                Assert.AreEqual(ex.Message, "Username is too short (minimum length allowed is 5)");
             }
             catch (Exception)
             {
@@ -146,7 +146,7 @@ namespace BusinessLogic.Test
             }
             catch (DomainException ex)
             {
-                Assert.AreEqual(ex.Message, "Username is too long (maximum length is 27)");
+                Assert.AreEqual(ex.Message, "Username is too long (maximum length allowed is 27)");
             }
             catch (Exception)
             {
@@ -180,7 +180,7 @@ namespace BusinessLogic.Test
             }
             catch (DomainException ex)
             {
-                Assert.AreEqual(ex.Message, "Password is too short (minimum length is 8)");
+                Assert.AreEqual(ex.Message, "Password is too short (minimum length allowed is 8)");
             }
             catch (Exception)
             {
@@ -189,7 +189,6 @@ namespace BusinessLogic.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(DomainException), "Password is required")]
         public void SetNullPasswordTest()
         {
             try
