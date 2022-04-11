@@ -26,7 +26,17 @@ namespace BusinessLogic.Test
             userManager.SignUp(username: "cantuccis", password: "somepass");
 
             //Assert
-            Assert.IsTrue(userManager.IsSignedUp(someUser.Username));   
+            Assert.IsTrue(userManager.IsRegistered(someUser.Username));   
+        }
+
+        [TestMethod]
+        public void NonExistentUserTest()
+        {
+            //Arrange
+            var userManager = new UserManager();
+
+            //Assert
+            Assert.IsFalse(userManager.IsRegistered(someUser.Username));
         }
 
         [TestMethod]
