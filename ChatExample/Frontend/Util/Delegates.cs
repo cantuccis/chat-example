@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic
+namespace Frontend.Util
 {
-    public class Class1
-    {
-    }
+    public delegate void OnError(string errorMessage);
+
 }
