@@ -18,7 +18,7 @@ namespace Frontend
         {
             InitializeComponent();
             Global.router = this;
-            Global.router.ShowScreen(new LoginScreen());
+            Global.router.ShowScreen(LoginScreen.Instance);
         }
 
         public void ShowScreen(Control screen)

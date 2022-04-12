@@ -19,7 +19,7 @@ namespace Frontend.Screens
 
         private void orSignInButton_Click(object sender, EventArgs e)
         {
-            Global.router.ShowScreen(new LoginScreen());
+            Global.router.ShowScreen(LoginScreen.Instance);
         }
     }
 }

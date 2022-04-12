@@ -23,7 +23,7 @@ namespace BusinessLogic.Test
             var userManager = new UserManager();
             
             //Act
-            userManager.SignUp(username: "cantuccis", password: "somepass");
+            userManager.SignUp(username: "cantuccis", password: "somepass", email: "cantuccis97@gmail.com");
 
             //Assert
             Assert.IsTrue(userManager.IsRegistered(someUser.Username));   

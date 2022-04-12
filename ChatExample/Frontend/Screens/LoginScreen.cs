@@ -12,7 +12,13 @@ namespace Frontend.Screens
 {
     public partial class LoginScreen : UserControl
     {
-        public LoginScreen()
+        // Esto permite tener una única instancia de la pantalla
+        // la cual se crea cuando se pide por primera vez
+        private static readonly Lazy<LoginScreen> lazy = 
+            new Lazy<LoginScreen>(() => new LoginScreen());
+        public static LoginScreen Instance { get { return lazy.Value; } }
+
+        private LoginScreen()
         {
             InitializeComponent();
         }

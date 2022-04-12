@@ -12,11 +12,11 @@ namespace BusinessLogic
             _users = new List<User>();
         }
 
-        public void SignUp(string username, string password)
+        public void SignUp(string username, string password, string email = "")
         {
             if (IsRegistered(username))
                 throw new DomainException("User already exists");
-            var user = new User(username: username, password: password);
+            var user = new User(username, password, email);
             _users.Add(user);
         }
 

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -72,6 +73,7 @@
     <Compile Include="Screens\SignUpScreen.Designer.cs">
       <DependentUpon>SignUpScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\Delegates.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{D1C05F60-1A03-4A4A-ACB6-F6D14FF1A26C}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
