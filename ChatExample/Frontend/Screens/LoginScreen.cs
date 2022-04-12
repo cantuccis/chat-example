@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Frontend.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,20 @@ namespace Frontend.Screens
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            Global.router.ShowScreen(new SignUpScreen());
+            Global.router.ShowScreen(SignUpScreen.Instance);
+        }
+
+        private void signInBtn_Click(object sender, EventArgs e)
+        {
+            messageLbl.Text = "";
+            string username = usernameTxt.Text;
+            string password = passwordTxt.Text;
+            AuthController.Instance.SignIn(username, password, onError: ShowMessage);
+        }
+
+        public void ShowMessage(string message)
+        {
+            messageLbl.Text = message;
         }
     }
 }

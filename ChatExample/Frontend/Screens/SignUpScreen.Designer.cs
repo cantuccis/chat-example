@@ -35,14 +35,14 @@
             this.usernameTxt = new MaterialSkin.Controls.MaterialTextBox2();
             this.signUpTitleLbl = new MaterialSkin.Controls.MaterialLabel();
             this.orSignInButton = new MaterialSkin.Controls.MaterialButton();
-            this.errorTxt = new MaterialSkin.Controls.MaterialLabel();
+            this.errorLbl = new MaterialSkin.Controls.MaterialLabel();
             this.loginCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginCard
             // 
             this.loginCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.loginCard.Controls.Add(this.errorTxt);
+            this.loginCard.Controls.Add(this.errorLbl);
             this.loginCard.Controls.Add(this.emailTxt);
             this.loginCard.Controls.Add(this.signUpBtn);
             this.loginCard.Controls.Add(this.passwordTxt);
@@ -66,7 +66,7 @@
             this.emailTxt.Depth = 0;
             this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.emailTxt.HideSelection = true;
-            this.emailTxt.Hint = "Email";
+            this.emailTxt.Hint = "Email (optional)";
             this.emailTxt.LeadingIcon = global::Frontend.Properties.Resources.email;
             this.emailTxt.Location = new System.Drawing.Point(88, 304);
             this.emailTxt.MaxLength = 32767;
@@ -81,7 +81,7 @@
             this.emailTxt.SelectionStart = 0;
             this.emailTxt.ShortcutsEnabled = true;
             this.emailTxt.Size = new System.Drawing.Size(408, 48);
-            this.emailTxt.TabIndex = 4;
+            this.emailTxt.TabIndex = 3;
             this.emailTxt.TabStop = false;
             this.emailTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.emailTxt.TrailingIcon = null;
@@ -100,11 +100,12 @@
             this.signUpBtn.Name = "signUpBtn";
             this.signUpBtn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.signUpBtn.Size = new System.Drawing.Size(77, 36);
-            this.signUpBtn.TabIndex = 3;
+            this.signUpBtn.TabIndex = 4;
             this.signUpBtn.Text = "Sign up";
             this.signUpBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
             this.signUpBtn.UseAccentColor = false;
             this.signUpBtn.UseVisualStyleBackColor = true;
+            this.signUpBtn.Click += new System.EventHandler(this.signUpBtn_Click);
             // 
             // passwordTxt
             // 
@@ -199,18 +200,18 @@
             this.orSignInButton.UseVisualStyleBackColor = true;
             this.orSignInButton.Click += new System.EventHandler(this.orSignInButton_Click);
             // 
-            // errorTxt
+            // errorLbl
             // 
-            this.errorTxt.Depth = 0;
-            this.errorTxt.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.errorTxt.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.errorTxt.ForeColor = System.Drawing.Color.Maroon;
-            this.errorTxt.Location = new System.Drawing.Point(14, 443);
-            this.errorTxt.MouseState = MaterialSkin.MouseState.HOVER;
-            this.errorTxt.Name = "errorTxt";
-            this.errorTxt.Size = new System.Drawing.Size(556, 23);
-            this.errorTxt.TabIndex = 5;
-            this.errorTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.errorLbl.Depth = 0;
+            this.errorLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.errorLbl.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.errorLbl.ForeColor = System.Drawing.Color.Maroon;
+            this.errorLbl.Location = new System.Drawing.Point(14, 443);
+            this.errorLbl.MouseState = MaterialSkin.MouseState.HOVER;
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(556, 23);
+            this.errorLbl.TabIndex = 5;
+            this.errorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SignUpScreen
             // 
@@ -235,6 +236,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 usernameTxt;
         private MaterialSkin.Controls.MaterialLabel signUpTitleLbl;
         private MaterialSkin.Controls.MaterialButton orSignInButton;
-        private MaterialSkin.Controls.MaterialLabel errorTxt;
+        private MaterialSkin.Controls.MaterialLabel errorLbl;
     }
 }

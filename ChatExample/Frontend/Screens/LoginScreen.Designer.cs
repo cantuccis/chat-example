@@ -32,6 +32,7 @@
             this.loginTitleLbl = new MaterialSkin.Controls.MaterialLabel();
             this.signInBtn = new MaterialSkin.Controls.MaterialButton();
             this.signUpBtn = new MaterialSkin.Controls.MaterialButton();
+            this.messageLbl = new MaterialSkin.Controls.MaterialLabel();
             this.passwordTxt = new MaterialSkin.Controls.MaterialTextBox2();
             this.usernameTxt = new MaterialSkin.Controls.MaterialTextBox2();
             this.loginCard.SuspendLayout();
@@ -40,6 +41,7 @@
             // loginCard
             // 
             this.loginCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.loginCard.Controls.Add(this.messageLbl);
             this.loginCard.Controls.Add(this.signInBtn);
             this.loginCard.Controls.Add(this.passwordTxt);
             this.loginCard.Controls.Add(this.usernameTxt);
@@ -75,7 +77,7 @@
             this.signInBtn.Depth = 0;
             this.signInBtn.HighEmphasis = true;
             this.signInBtn.Icon = null;
-            this.signInBtn.Location = new System.Drawing.Point(256, 344);
+            this.signInBtn.Location = new System.Drawing.Point(256, 328);
             this.signInBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.signInBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.signInBtn.Name = "signInBtn";
@@ -86,6 +88,7 @@
             this.signInBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
             this.signInBtn.UseAccentColor = false;
             this.signInBtn.UseVisualStyleBackColor = true;
+            this.signInBtn.Click += new System.EventHandler(this.signInBtn_Click);
             // 
             // signUpBtn
             // 
@@ -107,6 +110,21 @@
             this.signUpBtn.UseAccentColor = false;
             this.signUpBtn.UseVisualStyleBackColor = true;
             this.signUpBtn.Click += new System.EventHandler(this.signUpBtn_Click);
+            // 
+            // messageLbl
+            // 
+            this.messageLbl.Depth = 0;
+            this.messageLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.messageLbl.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.messageLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.messageLbl.HighEmphasis = true;
+            this.messageLbl.Location = new System.Drawing.Point(14, 379);
+            this.messageLbl.MouseState = MaterialSkin.MouseState.HOVER;
+            this.messageLbl.Name = "messageLbl";
+            this.messageLbl.Size = new System.Drawing.Size(556, 23);
+            this.messageLbl.TabIndex = 6;
+            this.messageLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.messageLbl.UseAccent = true;
             // 
             // passwordTxt
             // 
@@ -188,5 +206,6 @@
         private MaterialSkin.Controls.MaterialLabel loginTitleLbl;
         private MaterialSkin.Controls.MaterialButton signInBtn;
         private MaterialSkin.Controls.MaterialButton signUpBtn;
+        private MaterialSkin.Controls.MaterialLabel messageLbl;
     }
 }

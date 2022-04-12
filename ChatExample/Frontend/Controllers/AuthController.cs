@@ -24,32 +24,35 @@ namespace Frontend.Controllers
         private User _user;
 
         public bool IsUserSignedIn { get => _user != null; }
+        public User UserSignedIn { get => _user; }
 
-        public void SignIn(string username, string password, OnError errorCallback)
+        public void SignIn(string username, string password, OnError onError)
         {
             try
             {
                 if (!IsUserSignedIn)
                 {
                     _user = _userManager.SignIn(username, password);
+                    Global.router.ShowScreen(HomeScreen.Instance);
                 }
             }
             catch (DomainException ex)
             {
-                errorCallback(ex.Message);
+                onError(ex.Message);
             }
         }
 
-        public void SignUp(string username, string password, string email, OnError errorCallback)
+        public void SignUp(string username, string password, string email, OnError onError)
         {
             try
             {
-                _userManager.SignUp(username, password);
+                _userManager.SignUp(username, password, email);
+                LoginScreen.Instance.ShowMessage("Success! You can sign in now.");
                 Global.router.ShowScreen(LoginScreen.Instance);
             }
             catch (DomainException ex)
             {
-                errorCallback(ex.Message);
+                onError(ex.Message);
             }
         }
 
