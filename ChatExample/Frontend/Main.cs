@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Frontend.Screens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Frontend
         public Main()
         {
             InitializeComponent();
+            ShowScreen(new LoginScreen());
+        }
+
+        public void ShowScreen(Control screen)
+        {
+            this.mainPanel.Controls.Clear();
+            this.mainPanel.Controls.Add(screen);
         }
     }
 }

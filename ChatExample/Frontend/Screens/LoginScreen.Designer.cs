@@ -32,12 +32,14 @@
             this.loginTitleLbl = new MaterialSkin.Controls.MaterialLabel();
             this.usernameTxt = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.loginCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginCard
             // 
             this.loginCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.loginCard.Controls.Add(this.materialButton1);
             this.loginCard.Controls.Add(this.materialTextBox21);
             this.loginCard.Controls.Add(this.usernameTxt);
             this.loginCard.Controls.Add(this.loginTitleLbl);
@@ -122,6 +124,25 @@
             this.materialTextBox21.TrailingIcon = null;
             this.materialTextBox21.UseSystemPasswordChar = false;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(256, 344);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(73, 36);
+            this.materialButton1.TabIndex = 3;
+            this.materialButton1.Text = "Sign in";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +151,7 @@
             this.Name = "LoginScreen";
             this.Size = new System.Drawing.Size(947, 616);
             this.loginCard.ResumeLayout(false);
+            this.loginCard.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -140,5 +162,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
         private MaterialSkin.Controls.MaterialTextBox2 usernameTxt;
         private MaterialSkin.Controls.MaterialLabel loginTitleLbl;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }
