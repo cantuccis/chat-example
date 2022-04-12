@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(931, 577);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Chat App";
             this.ResumeLayout(false);
 
         }
