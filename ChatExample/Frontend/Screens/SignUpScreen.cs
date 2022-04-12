@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Frontend.Screens
 {
-    public partial class LoginScreen : UserControl
+    public partial class SignUpScreen : UserControl
     {
-        public LoginScreen()
+        public SignUpScreen()
         {
             InitializeComponent();
         }
 
-        private void signUpBtn_Click(object sender, EventArgs e)
+        private void orSignInButton_Click(object sender, EventArgs e)
         {
-            Global.router.ShowScreen(new SignUpScreen());
+            Global.router.ShowScreen(new LoginScreen());
         }
     }
 }

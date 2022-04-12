@@ -12,12 +12,13 @@ using System.Windows.Forms;
 
 namespace Frontend
 {
-    public partial class Main : MaterialForm
+    public partial class Main : MaterialForm, IRouter
     {
         public Main()
         {
             InitializeComponent();
-            ShowScreen(new LoginScreen());
+            Global.router = this;
+            Global.router.ShowScreen(new LoginScreen());
         }
 
         public void ShowScreen(Control screen)
