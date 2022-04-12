@@ -33,7 +33,9 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mainPanel.AutoSize = true;
+            this.mainPanel.Location = new System.Drawing.Point(0, 64);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(947, 616);
             this.mainPanel.TabIndex = 0;
@@ -42,12 +44,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 616);
+            this.ClientSize = new System.Drawing.Size(948, 682);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Main";
+            this.Sizable = false;
             this.Text = "Chat App";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

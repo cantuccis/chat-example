@@ -1,4 +1,5 @@
 ﻿using Frontend.Screens;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Frontend
 {
-    public partial class Main : Form
+    public partial class Main : MaterialForm
     {
         public Main()
         {

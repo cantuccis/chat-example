@@ -32,14 +32,15 @@
             this.loginTitleLbl = new MaterialSkin.Controls.MaterialLabel();
             this.usernameTxt = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.signInBtn = new MaterialSkin.Controls.MaterialButton();
+            this.signUpBtn = new MaterialSkin.Controls.MaterialButton();
             this.loginCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginCard
             // 
             this.loginCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.loginCard.Controls.Add(this.materialButton1);
+            this.loginCard.Controls.Add(this.signInBtn);
             this.loginCard.Controls.Add(this.materialTextBox21);
             this.loginCard.Controls.Add(this.usernameTxt);
             this.loginCard.Controls.Add(this.loginTitleLbl);
@@ -76,7 +77,7 @@
             this.usernameTxt.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.usernameTxt.HideSelection = true;
             this.usernameTxt.Hint = "Username";
-            this.usernameTxt.LeadingIcon = null;
+            this.usernameTxt.LeadingIcon = global::Frontend.Properties.Resources.user;
             this.usernameTxt.Location = new System.Drawing.Point(88, 176);
             this.usernameTxt.MaxLength = 32767;
             this.usernameTxt.MouseState = MaterialSkin.MouseState.OUT;
@@ -105,7 +106,7 @@
             this.materialTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox21.HideSelection = true;
             this.materialTextBox21.Hint = "Password";
-            this.materialTextBox21.LeadingIcon = null;
+            this.materialTextBox21.LeadingIcon = global::Frontend.Properties.Resources.key;
             this.materialTextBox21.Location = new System.Drawing.Point(88, 240);
             this.materialTextBox21.MaxLength = 32767;
             this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
@@ -124,29 +125,50 @@
             this.materialTextBox21.TrailingIcon = null;
             this.materialTextBox21.UseSystemPasswordChar = false;
             // 
-            // materialButton1
+            // signInBtn
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(256, 344);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(73, 36);
-            this.materialButton1.TabIndex = 3;
-            this.materialButton1.Text = "Sign in";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.signInBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.signInBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.signInBtn.Depth = 0;
+            this.signInBtn.HighEmphasis = true;
+            this.signInBtn.Icon = null;
+            this.signInBtn.Location = new System.Drawing.Point(256, 344);
+            this.signInBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.signInBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.signInBtn.Name = "signInBtn";
+            this.signInBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.signInBtn.Size = new System.Drawing.Size(73, 36);
+            this.signInBtn.TabIndex = 3;
+            this.signInBtn.Text = "Sign in";
+            this.signInBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.signInBtn.UseAccentColor = false;
+            this.signInBtn.UseVisualStyleBackColor = true;
+            // 
+            // signUpBtn
+            // 
+            this.signUpBtn.AutoSize = false;
+            this.signUpBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.signUpBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.signUpBtn.Depth = 0;
+            this.signUpBtn.HighEmphasis = true;
+            this.signUpBtn.Icon = null;
+            this.signUpBtn.Location = new System.Drawing.Point(421, 520);
+            this.signUpBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.signUpBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.signUpBtn.Name = "signUpBtn";
+            this.signUpBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.signUpBtn.Size = new System.Drawing.Size(104, 36);
+            this.signUpBtn.TabIndex = 4;
+            this.signUpBtn.Text = "or sign up";
+            this.signUpBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.signUpBtn.UseAccentColor = false;
+            this.signUpBtn.UseVisualStyleBackColor = true;
             // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.signUpBtn);
             this.Controls.Add(this.loginCard);
             this.Name = "LoginScreen";
             this.Size = new System.Drawing.Size(947, 616);
@@ -162,6 +184,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
         private MaterialSkin.Controls.MaterialTextBox2 usernameTxt;
         private MaterialSkin.Controls.MaterialLabel loginTitleLbl;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton signInBtn;
+        private MaterialSkin.Controls.MaterialButton signUpBtn;
     }
 }
