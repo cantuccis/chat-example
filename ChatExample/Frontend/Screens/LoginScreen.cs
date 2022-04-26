@@ -1,4 +1,5 @@
 ﻿using Frontend.Controllers;
+using Frontend.UserControls.InAppNotification;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,12 +35,8 @@ namespace Frontend.Screens
             messageLbl.Text = "";
             string username = usernameTxt.Text;
             string password = passwordTxt.Text;
-            AuthController.Instance.SignIn(username, password, onError: ShowMessage);
+            AuthController.Instance.SignIn(username, password);
         }
 
-        public void ShowMessage(string message)
-        {
-            messageLbl.Text = message;
-        }
     }
 }

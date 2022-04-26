@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace Frontend.Screens
             InitializeComponent();
         }
 
+        private Bitmap selectedImage;
+
         private void orSignInButton_Click(object sender, EventArgs e)
         {
             Global.router.ShowScreen(LoginScreen.Instance);
@@ -29,17 +32,24 @@ namespace Frontend.Screens
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            errorLbl.Text = "";
             string username = usernameTxt.Text;
             string password = passwordTxt.Text;
             string email = emailTxt.Text;
-            AuthController.Instance.SignUp(username, password, email, onError: ShowErrorMessage);
+            AuthController.Instance.SignUp(username, password, email, selectedImage);
 
         }
 
-        private void ShowErrorMessage(string error)
+        private void addProfileImageBtn_Click(object sender, EventArgs e)
         {
-            errorLbl.Text = error;
+            using OpenFileDialog pictureFileDialog = new OpenFileDialog();
+            pictureFileDialog.Title = "Open Image";
+            pictureFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+
+            if (pictureFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedImage = new Bitmap(pictureFileDialog.FileName);
+                profilePictureImage.Image = selectedImage;
+            }
         }
     }
 }

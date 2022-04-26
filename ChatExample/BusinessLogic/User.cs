@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Drawing;
 
 namespace BusinessLogic
 {
-    public class User
+    public class User : IEquatable<User>
     {
         public static readonly int MinimumUsernameLength = 5;
         public static readonly int MaximumUsernameLength = 27;
@@ -43,6 +44,8 @@ namespace BusinessLogic
 
         public string Email { get; set; }
         public DateTime CreationDate { get => creationDate; set => creationDate = value; }
+        public Bitmap ProfileImage { get; set; }
+
 
         public bool CheckPassword(string password) => this.Password == password;
 
@@ -63,31 +66,9 @@ namespace BusinessLogic
             }
         }
 
-        public override bool Equals(object obj)
+        public bool Equals(User other)
         {
-            //       
-            // See the full list of guidelines at
-            //   http://go.microsoft.com/fwlink/?LinkID=85237  
-            // and also the guidance for operator== at
-            //   http://go.microsoft.com/fwlink/?LinkId=85238
-            //
-
-            if (obj == null || GetType() != obj.GetType())
-            {
-                return false;
-            }
-
-            var user = (User)obj;
-
-            return user.username == this.username;
+            return other.username == this.username;
         }
-
-        // override object.GetHashCode
-        public override int GetHashCode()
-        {
-            // TODO: write your implementation of GetHashCode() here
-            return base.GetHashCode();
-        }
-
     }
 }

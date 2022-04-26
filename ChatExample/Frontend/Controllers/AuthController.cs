@@ -1,8 +1,10 @@
 ﻿using BusinessLogic;
 using Frontend.Screens;
+using Frontend.UserControls.InAppNotification;
 using Frontend.Util;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,7 @@ namespace Frontend.Controllers
         public bool IsUserSignedIn { get => _user != null; }
         public User UserSignedIn { get => _user; }
 
-        public void SignIn(string username, string password, OnError onError)
+        public void SignIn(string username, string password, OnError onError = null)
         {
             try
             {
@@ -38,21 +40,23 @@ namespace Frontend.Controllers
             }
             catch (DomainException ex)
             {
-                onError(ex.Message);
+                InAppNotification.Instance.ShowError(ex.Message);
+                onError?.Invoke(ex.Message);
             }
         }
 
-        public void SignUp(string username, string password, string email, OnError onError)
+        public void SignUp(string username, string password, string email, Bitmap profileImage = null, OnError onError = null)
         {
             try
             {
-                _userManager.SignUp(username, password, email);
-                LoginScreen.Instance.ShowMessage("Success! You can sign in now.");
+                _userManager.SignUp(username, password, email, profileImage);
+                InAppNotification.Instance.ShowMessage("Success! You can sign in now.");
                 Global.router.ShowScreen(LoginScreen.Instance);
             }
             catch (DomainException ex)
             {
-                onError(ex.Message);
+                InAppNotification.Instance.ShowError(ex.Message);
+                onError?.Invoke(ex.Message);
             }
         }
 

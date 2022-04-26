@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace BusinessLogic
@@ -12,11 +13,11 @@ namespace BusinessLogic
             _users = new List<User>();
         }
 
-        public void SignUp(string username, string password, string email = "")
+        public void SignUp(string username, string password, string email = "", Bitmap profilePicture = null)
         {
             if (IsRegistered(username))
                 throw new DomainException("User already exists");
-            var user = new User(username, password, email);
+            var user = new User(username, password, email) { ProfileImage = profilePicture };
             _users.Add(user);
         }
 

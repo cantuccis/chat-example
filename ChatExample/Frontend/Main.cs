@@ -1,4 +1,5 @@
 ﻿using Frontend.Screens;
+using Frontend.UserControls.InAppNotification;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Frontend
             InitializeComponent();
             Global.router = this;
             Global.router.ShowScreen(LoginScreen.Instance);
+            this.bottomPanel.Controls.Add(InAppNotification.Instance);
         }
 
         public void ShowScreen(Control screen)
