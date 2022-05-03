@@ -9,6 +9,11 @@ namespace BusinessLogic
     public class Chat
     {
         private List<Message> _messages;
+
+        public Chat()
+        {
+            _messages = new List<Message>();   
+        }
         public List<Message> Messages
         {
             get => new List<Message>(_messages);

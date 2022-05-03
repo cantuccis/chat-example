@@ -20,15 +20,19 @@ namespace Frontend.Screens
         public HomeScreen()
         {
             InitializeComponent();
-            if (AuthController.Instance.IsUserSignedIn)
+            /*
+             * if (AuthController.Instance.IsUserSignedIn)
             {
                 var user = AuthController.Instance.UserSignedIn;
-                helloLbl.Text = $"Heeey {user.Username}, nothing to do here yet, work in progress...";
-            }
+                
+]            }
             else
             {
-                helloLbl.Text = "Who the hell are you and how did you get in here!?";
+
             }
+             */
+            var chatPanel = new UserControls.ChatPanel.ChatPanel();
+            chatPanelContainer.Controls.Add(chatPanel);
         }
     }
 }

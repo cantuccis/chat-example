@@ -1,4 +1,5 @@
-﻿using Frontend.Screens;
+﻿using Frontend.Controllers;
+using Frontend.Screens;
 using Frontend.UserControls.InAppNotification;
 using MaterialSkin.Controls;
 using System;
@@ -27,6 +28,12 @@ namespace Frontend
         {
             this.mainPanel.Controls.Clear();
             this.mainPanel.Controls.Add(screen);
+        }
+
+        private void materialTabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            AuthController.Instance.LogOut();
+            this.materialTabControl1.SelectTab(0);
         }
     }
 }

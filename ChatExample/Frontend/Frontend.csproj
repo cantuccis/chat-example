@@ -84,6 +84,18 @@
     <Compile Include="Screens\SignUpScreen.Designer.cs">
       <DependentUpon>SignUpScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ChatPanel\ChatPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChatPanel\ChatPanel.Designer.cs">
+      <DependentUpon>ChatPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChatPanel\MessageBubble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChatPanel\MessageBubble.Designer.cs">
+      <DependentUpon>MessageBubble.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\InAppNotificationPanel\ErrorNotification.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\SignUpScreen.resx">
       <DependentUpon>SignUpScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChatPanel\ChatPanel.resx">
+      <DependentUpon>ChatPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChatPanel\MessageBubble.resx">
+      <DependentUpon>MessageBubble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\InAppNotificationPanel\InAppNotification.resx">
       <DependentUpon>InAppNotification.cs</DependentUpon>
@@ -173,7 +191,7 @@
     <None Include="Resources\check.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\Chat\" />
+    <None Include="Resources\send.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\profile_image.png" />

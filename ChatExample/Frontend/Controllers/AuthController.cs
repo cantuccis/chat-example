@@ -60,5 +60,10 @@ namespace Frontend.Controllers
             }
         }
 
+        public void LogOut()
+        {
+            _user = null;
+            Global.router.ShowScreen(LoginScreen.Instance);
+        }
     }
 }
